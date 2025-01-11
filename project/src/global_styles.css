@@ -1,0 +1,45 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Global styles */
+html, body { 
+  height: 100%;
+  background-color: #1A1A1A;
+  color: #ffffff;
+}
+
+body { 
+  margin: 0; 
+  font-family: Roboto, "Helvetica Neue", sans-serif; 
+}
+
+/* Override Material styles for dark theme */
+.mat-mdc-card {
+  background-color: #2C2C2C !important;
+  color: white !important;
+}
+
+.mat-mdc-form-field {
+  width: 100%;
+}
+
+.mat-mdc-form-field-label {
+  color: rgba(255, 255, 255, 0.7) !important;
+}
+
+.mat-mdc-text-field-wrapper {
+  background-color: #2C2C2C !important;
+}
+
+.mat-mdc-form-field-input-control {
+  color: white !important;
+}
+
+.mdc-text-field--filled:not(.mdc-text-field--disabled) {
+  background-color: #2C2C2C !important;
+}
+
+.mdc-text-field:not(.mdc-text-field--disabled) .mdc-floating-label {
+  color: rgba(255, 255, 255, 0.7) !important;
+}
