@@ -6,151 +6,165 @@ import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatSnackBarModule, MatSnackBar } from '@angular/material/snack-bar';
+import { MatCardModule } from '@angular/material/card';
+import { MatDividerModule } from '@angular/material/divider';
 import emailjs from '@emailjs/browser';
 
 @Component({
   selector: 'app-contact',
   standalone: true,
   imports: [
-    CommonModule, 
-    ReactiveFormsModule, 
-    MatFormFieldModule, 
-    MatInputModule, 
-    MatButtonModule, 
+    CommonModule,
+    ReactiveFormsModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatButtonModule,
     MatIconModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    MatCardModule,
+    MatDividerModule
   ],
-  styles: [`
-    .contact-form-container {
-      background-color: rgba(255, 255, 255, 0.05);
-      backdrop-filter: blur(10px);
-      border-radius: 16px;
-      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      transition: all 0.3s ease;
-    }
-    .contact-form-container:hover {
-      box-shadow: 0 8px 40px rgba(0, 0, 0, 0.2);
-    }
-    .mat-form-field {
-      width: 100%;
-    }
-    .mat-form-field-appearance-outline .mat-form-field-outline {
-      color: rgba(255, 215, 0, 0.5);
-    }
-    .mat-form-field-appearance-outline.mat-focused .mat-form-field-outline-thick {
-      color: #ffd700;
-    }
-    .mat-input-element {
-      color: #ffffff;
-    }
-    .mat-form-field-label {
-      color: rgba(255, 255, 255, 0.7);
-    }
-    .contact-info-item {
-      transition: all 0.3s ease;
-    }
-    .contact-info-item:hover {
-      transform: translateY(-5px);
-    }
-    .social-link {
-      transition: all 0.3s ease;
-    }
-    .social-link:hover {
-      transform: scale(1.1);
-    }
-  `],
   template: `
-    <div class="min-h-screen bg-filla-dark py-20 px-4 sm:px-6 lg:px-8">
+    <div class="min-h-screen bg-gradient-to-b from-filla-dark to-filla-gray py-20 px-4">
       <div class="max-w-7xl mx-auto">
-        <h1 class="text-4xl md:text-5xl font-bold mb-12 text-center text-white">
-          Contact <span class="text-filla-gold">Us</span>
-        </h1>
+        <!-- Hero Section -->
+        <div class="text-center mb-16">
+          <h1 class="text-4xl md:text-5xl font-bold mb-4">
+            Get in <span class="text-filla-gold">Touch</span>
+          </h1>
+          <p class="text-xl text-gray-300 max-w-2xl mx-auto">
+            Have questions about our services? We're here to help you plan your perfect journey.
+          </p>
+        </div>
+
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
-          <div class="contact-form-container p-8">
-            <h2 class="text-2xl font-bold mb-6 text-filla-gold">Get in Touch</h2>
+          <!-- Contact Form -->
+          <mat-card class="bg-filla-gray/50 backdrop-blur-lg p-8 rounded-xl shadow-2xl transform hover:scale-[1.02] transition-all duration-300">
             <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" class="space-y-6">
-              <mat-form-field appearance="outline" color="accent">
-                <mat-label>Name</mat-label>
-                <input matInput formControlName="name" placeholder="Your Name">
-                <mat-icon matSuffix>person</mat-icon>
-                <mat-error *ngIf="contactForm.get('name')?.errors?.['required']">Name is required</mat-error>
-              </mat-form-field>
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <mat-form-field appearance="outline" color="accent">
+                  <mat-label>First Name</mat-label>
+                  <input matInput formControlName="firstName" placeholder="John">
+                  <mat-error *ngIf="contactForm.get('firstName')?.errors?.['required']">
+                    First name is required
+                  </mat-error>
+                </mat-form-field>
+
+                <mat-form-field appearance="outline" color="accent">
+                  <mat-label>Last Name</mat-label>
+                  <input matInput formControlName="lastName" placeholder="Doe">
+                  <mat-error *ngIf="contactForm.get('lastName')?.errors?.['required']">
+                    Last name is required
+                  </mat-error>
+                </mat-form-field>
+              </div>
 
               <mat-form-field appearance="outline" color="accent">
                 <mat-label>Email</mat-label>
-                <input matInput formControlName="email" placeholder="your.email@example.com" type="email">
+                <input matInput formControlName="email" placeholder="john.doe@example.com" type="email">
                 <mat-icon matSuffix>email</mat-icon>
-                <mat-error *ngIf="contactForm.get('email')?.errors?.['required']">Email is required</mat-error>
-                <mat-error *ngIf="contactForm.get('email')?.errors?.['email']">Please enter a valid email</mat-error>
+                <mat-error *ngIf="contactForm.get('email')?.errors?.['required']">
+                  Email is required
+                </mat-error>
+                <mat-error *ngIf="contactForm.get('email')?.errors?.['email']">
+                  Please enter a valid email
+                </mat-error>
               </mat-form-field>
 
               <mat-form-field appearance="outline" color="accent">
                 <mat-label>Phone</mat-label>
-                <input matInput formControlName="phone" placeholder="Your Phone Number">
+                <input matInput formControlName="phone" placeholder="+1 234 567 8900">
                 <mat-icon matSuffix>phone</mat-icon>
-                <mat-error *ngIf="contactForm.get('phone')?.errors?.['required']">Phone is required</mat-error>
+                <mat-error *ngIf="contactForm.get('phone')?.errors?.['required']">
+                  Phone number is required
+                </mat-error>
               </mat-form-field>
 
               <mat-form-field appearance="outline" color="accent">
                 <mat-label>Message</mat-label>
-                <textarea matInput formControlName="message" placeholder="How can we help you?" rows="4"></textarea>
+                <textarea matInput formControlName="message" rows="4" 
+                  placeholder="Tell us about your travel plans..."></textarea>
                 <mat-icon matSuffix>message</mat-icon>
-                <mat-error *ngIf="contactForm.get('message')?.errors?.['required']">Message is required</mat-error>
+                <mat-error *ngIf="contactForm.get('message')?.errors?.['required']">
+                  Message is required
+                </mat-error>
               </mat-form-field>
 
-              <button mat-raised-button 
+              <button mat-raised-button color="accent"
                       [disabled]="contactForm.invalid || isSubmitting"
-                      class="bg-filla-gold text-filla-dark w-full py-3 rounded-full font-bold text-lg transition duration-300 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-filla-gold focus:ring-opacity-50">
+                      class="w-full py-6 text-lg font-semibold rounded-full bg-filla-gold hover:bg-filla-gold/90 text-filla-dark">
                 {{ isSubmitting ? 'Sending...' : 'Send Message' }}
+                <mat-icon class="ml-2">send</mat-icon>
               </button>
             </form>
-          </div>
+          </mat-card>
 
-          <div class="space-y-12">
-            <div class="contact-info-item bg-filla-gray p-6 rounded-lg">
-              <h3 class="text-xl font-bold mb-4 text-filla-gold flex items-center">
-                <mat-icon class="mr-2">location_on</mat-icon>Office Location
-              </h3>
-              <p class="text-gray-300">123 Travel Street</p>
-              <p class="text-gray-300">Business District</p>
-              <p class="text-gray-300">Accra, Ghana</p>
-            </div>
-
-            <div class="contact-info-item bg-filla-gray p-6 rounded-lg">
-              <h3 class="text-xl font-bold mb-4 text-filla-gold flex items-center">
-                <mat-icon class="mr-2">info</mat-icon>Contact Information
-              </h3>
-              <p class="text-gray-300 flex items-center mb-2">
-                <mat-icon class="mr-2 text-filla-gold">phone</mat-icon>
-                +233 XX XXX XXXX
-              </p>
-              <p class="text-gray-300 flex items-center mb-2">
-                <mat-icon class="mr-2 text-filla-gold">email</mat-icon>
-                infofillacity.com
-              </p>
-              <p class="text-gray-300 flex items-center">
-                <mat-icon class="mr-2 text-filla-gold">access_time</mat-icon>
-                Mon-Fri 9:00 AM - 6:00 PM
-              </p>
-            </div>
-
-            <div class="contact-info-item bg-filla-gray p-6 rounded-lg">
-              <h3 class="text-xl font-bold mb-4 text-filla-gold flex items-center">
-                <mat-icon class="mr-2">share</mat-icon>Follow Us
-              </h3>
-              <div class="flex space-x-4">
-                <a href="#" class="social-link text-gray-300 hover:text-filla-gold transition-colors duration-300 flex items-center">
-                  <mat-icon class="mr-1">facebook</mat-icon>Facebook
-                </a>
-                <a href="#" class="social-link text-gray-300 hover:text-filla-gold transition-colors duration-300 flex items-center">
-                  <mat-icon class="mr-1">photo_camera</mat-icon>Instagram
-                </a>
-                <a href="#" class="social-link text-gray-300 hover:text-filla-gold transition-colors duration-300 flex items-center">
-                  <mat-icon class="mr-1">twitter</mat-icon>Twitter
-                </a>
+          <!-- Contact Information -->
+          <div class="space-y-8">
+            <!-- Office Location -->
+            <mat-card class="bg-filla-gray/50 backdrop-blur-lg p-6 rounded-xl transform hover:scale-[1.02] transition-all duration-300">
+              <div class="flex items-start space-x-4">
+                <mat-icon class="text-filla-gold text-3xl">location_on</mat-icon>
+                <div>
+                  <h3 class="text-xl font-bold mb-2">Visit Our Office</h3>
+                  <p class="text-gray-300">123 Travel Street</p>
+                  <p class="text-gray-300">Business District</p>
+                  <p class="text-gray-300">Accra, Ghana</p>
+                </div>
               </div>
-            </div>
+            </mat-card>
+
+            <!-- Contact Details -->
+            <mat-card class="bg-filla-gray/50 backdrop-blur-lg p-6 rounded-xl transform hover:scale-[1.02] transition-all duration-300">
+              <div class="flex items-start space-x-4">
+                <mat-icon class="text-filla-gold text-3xl">contact_phone</mat-icon>
+                <div>
+                  <h3 class="text-xl font-bold mb-2">Contact Details</h3>
+                  <p class="text-gray-300 flex items-center">
+                    <mat-icon class="mr-2 text-filla-gold">phone</mat-icon>
+                    +233 XX XXX XXXX
+                  </p>
+                  <p class="text-gray-300 flex items-center">
+                    <mat-icon class="mr-2 text-filla-gold">email</mat-icon>
+                    infofillacity.com
+                  </p>
+                </div>
+              </div>
+            </mat-card>
+
+            <!-- Business Hours -->
+            <mat-card class="bg-filla-gray/50 backdrop-blur-lg p-6 rounded-xl transform hover:scale-[1.02] transition-all duration-300">
+              <div class="flex items-start space-x-4">
+                <mat-icon class="text-filla-gold text-3xl">schedule</mat-icon>
+                <div>
+                  <h3 class="text-xl font-bold mb-2">Business Hours</h3>
+                  <p class="text-gray-300">Monday - Friday: 9:00 AM - 6:00 PM</p>
+                  <p class="text-gray-300">Saturday: 10:00 AM - 4:00 PM</p>
+                  <p class="text-gray-300">Sunday: Closed</p>
+                </div>
+              </div>
+            </mat-card>
+
+            <!-- Social Media -->
+            <mat-card class="bg-filla-gray/50 backdrop-blur-lg p-6 rounded-xl transform hover:scale-[1.02] transition-all duration-300">
+              <div class="flex items-start space-x-4">
+                <mat-icon class="text-filla-gold text-3xl">share</mat-icon>
+                <div>
+                  <h3 class="text-xl font-bold mb-2">Follow Us</h3>
+                  <div class="flex space-x-4">
+                    <a href="#" class="text-gray-300 hover:text-filla-gold transition-colors duration-300">
+                      <mat-icon>facebook</mat-icon>
+                    </a>
+                    <a href="#" class="text-gray-300 hover:text-filla-gold transition-colors duration-300">
+                      <mat-icon>photo_camera</mat-icon>
+                    </a>
+                    <a href="#" class="text-gray-300 hover:text-filla-gold transition-colors duration-300">
+                      <mat-icon>twitter</mat-icon>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </mat-card>
           </div>
         </div>
       </div>
@@ -163,7 +177,8 @@ export class ContactComponent implements OnInit {
 
   constructor(private fb: FormBuilder, private snackBar: MatSnackBar) {
     this.contactForm = this.fb.group({
-      name: ['', Validators.required],
+      firstName: ['', Validators.required],
+      lastName: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
       phone: ['', Validators.required],
       message: ['', Validators.required]
@@ -171,7 +186,6 @@ export class ContactComponent implements OnInit {
   }
 
   ngOnInit() {
-    // Initialize EmailJS with your user ID
     emailjs.init("YOUR_USER_ID");
   }
 
@@ -184,7 +198,7 @@ export class ContactComponent implements OnInit {
           "YOUR_SERVICE_ID",
           "YOUR_TEMPLATE_ID",
           {
-            from_name: this.contactForm.value.name,
+            from_name: `${this.contactForm.value.firstName} ${this.contactForm.value.lastName}`,
             from_email: this.contactForm.value.email,
             phone: this.contactForm.value.phone,
             message: this.contactForm.value.message,

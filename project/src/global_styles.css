@@ -43,3 +43,5 @@ body {
 .mdc-text-field:not(.mdc-text-field--disabled) .mdc-floating-label {
   color: rgba(255, 255, 255, 0.7) !important;
 }
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

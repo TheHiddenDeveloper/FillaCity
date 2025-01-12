@@ -1,8 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <module external.linked.project.id="project_10-build" external.linked.project.path="$MODULE_DIR$/../../project" external.root.project.path="$MODULE_DIR$/../.." external.system.id="SBT" external.system.module.type="nestedProject" type="SBT_MODULE" version="4">
-  <component name="DisplayModuleName">
-    <option name="name" value="project_10-build" />
-  </component>
   <component name="NewModuleRootManager">
     <output url="file://$MODULE_DIR$/../../project/target/idea-classes" />
     <output-test url="file://$MODULE_DIR$/../../project/target/idea-test-classes" />
@@ -21,9 +18,5 @@
         <SOURCES />
       </library>
     </orderEntry>
-  </component>
-  <component name="SbtModule">
-    <option name="buildForURI" value="file:/$MODULE_DIR$/../../../../../../E-Learning%20and%20Projects/Company/FillaCity/project/" />
-    <option name="resolvers" value="C:\Users\rodne\.ivy2\cache|ivy|true|Local cache" />
   </component>
 </module>
