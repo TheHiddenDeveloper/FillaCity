@@ -136,6 +136,56 @@ import { MatFabButton } from '@angular/material/button';
         </div>
       </div>
     </section>
+    
+    <!-- Success Gallery Section -->
+    <section class="py-20 bg-filla-dark">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold mb-12 text-center">
+          Our Success <span class="text-filla-gold">Gallery</span>
+        </h2>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <!-- Success Cards -->
+          <mat-card class="bg-filla-gray/30 backdrop-blur-lg hover:bg-filla-gray/40 transition-all duration-300">
+            <img mat-card-image src="https://images.unsplash.com/photo-1516026672322-bc52d61a55d5" 
+                 alt="Safari Adventure" class="h-48 object-cover">
+            <mat-card-content class="p-6">
+              <h3 class="text-xl font-bold mb-2">Safari Adventure</h3>
+              <p class="text-gray-300 mb-4">Organized a memorable safari expedition for 20+ guests, featuring exclusive wildlife encounters and luxury accommodations.</p>
+              <div class="flex items-center text-filla-gold">
+                <mat-icon class="mr-2">star</mat-icon>
+                <span>5.0 Rating</span>
+              </div>
+            </mat-card-content>
+          </mat-card>
+
+          <!-- Add more success cards (total of 14) following the same pattern -->
+          <!-- Example of additional cards: -->
+          <mat-card class="bg-filla-gray/30 backdrop-blur-lg hover:bg-filla-gray/40 transition-all duration-300">
+            <img mat-card-image src="https://images.unsplash.com/photo-1571406252241-db0280bd36cd" 
+                 alt="Ghana Cultural Tour" class="h-48 object-cover">
+            <mat-card-content class="p-6">
+              <h3 class="text-xl font-bold mb-2">Ghana Cultural Tour</h3>
+              <p class="text-gray-300 mb-4">Curated an immersive cultural experience for international visitors, showcasing Ghana's rich heritage and traditions.</p>
+              <div class="flex items-center text-filla-gold">
+                <mat-icon class="mr-2">star</mat-icon>
+                <span>4.9 Rating</span>
+              </div>
+            </mat-card-content>
+          </mat-card>
+
+          <!-- Continue adding more cards... -->
+        </div>
+
+        <!-- Pagination or Load More -->
+        <div class="text-center mt-12">
+          <button mat-raised-button class="bg-filla-gold text-filla-dark px-8 py-3">
+            Load More Success Stories
+          </button>
+        </div>
+      </div>
+    </section>
+
 
     <!-- WhatsApp Button -->
     <a href="https://wa.me/YOUR_WHATSAPP_NUMBER" 
