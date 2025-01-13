@@ -97,32 +97,32 @@ import { MatIconModule } from '@angular/material/icon';
         
         <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div class="text-center">
-            <div class="w-16 h-16 mx-auto mb-4 bg-primary/10 rounded-full flex items-center justify-center">
-              <mat-icon class="text-primary text-3xl">flight</mat-icon>
+            <div class="w-20 h-20 mx-auto mb-6 bg-primary/10 rounded-full flex items-center justify-center">
+              <mat-icon class="text-4xl icon-themed">flight</mat-icon>
             </div>
             <h3 class="text-xl font-bold mb-2">Best Flights</h3>
             <p class="text-gray-600">Handpicked flights for comfort and value</p>
           </div>
 
           <div class="text-center">
-            <div class="w-16 h-16 mx-auto mb-4 bg-primary/10 rounded-full flex items-center justify-center">
-              <mat-icon class="text-primary text-3xl">hotel</mat-icon>
+            <div class="w-20 h-20 mx-auto mb-6 bg-primary/10 rounded-full flex items-center justify-center">
+              <mat-icon class="text-4xl icon-themed">hotel</mat-icon>
             </div>
             <h3 class="text-xl font-bold mb-2">Top Hotels</h3>
             <p class="text-gray-600">Luxury stays at competitive prices</p>
           </div>
 
           <div class="text-center">
-            <div class="w-16 h-16 mx-auto mb-4 bg-primary/10 rounded-full flex items-center justify-center">
-              <mat-icon class="text-primary text-3xl">support_agent</mat-icon>
+            <div class="w-20 h-20 mx-auto mb-6 bg-primary/10 rounded-full flex items-center justify-center">
+              <mat-icon class="text-4xl icon-themed">support_agent</mat-icon>
             </div>
             <h3 class="text-xl font-bold mb-2">24/7 Support</h3>
             <p class="text-gray-600">Always here when you need us</p>
           </div>
 
           <div class="text-center">
-            <div class="w-16 h-16 mx-auto mb-4 bg-primary/10 rounded-full flex items-center justify-center">
-              <mat-icon class="text-primary text-3xl">savings</mat-icon>
+            <div class="w-20 h-20 mx-auto mb-6 bg-primary/10 rounded-full flex items-center justify-center">
+              <mat-icon class="text-4xl icon-themed">savings</mat-icon>
             </div>
             <h3 class="text-xl font-bold mb-2">Best Prices</h3>
             <p class="text-gray-600">Unbeatable value for your journey</p>

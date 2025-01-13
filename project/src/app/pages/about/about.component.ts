@@ -20,7 +20,7 @@ import { MatIconModule } from '@angular/material/icon';
       
       <div class="container relative z-10">
         <h1 class="text-4xl md:text-5xl font-bold text-white mb-4">
-          About <span class="text-accent">Wanderlust</span>
+          About <span class="text-accent">FillaCity Travel and Tour</span>
         </h1>
         <p class="text-xl text-gray-200 max-w-2xl">
           Creating unforgettable journeys since 2010
@@ -36,7 +36,7 @@ import { MatIconModule } from '@angular/material/icon';
             <h2 class="text-3xl font-bold mb-6">Our Story</h2>
             <div class="space-y-4 text-gray-600">
               <p>
-                Founded in 2010, Wanderlust has grown from a small local agency to a leading name in luxury travel experiences. 
+                Founded in 2010, FillaCity Travel and Tour has grown from a small local agency to a leading name in luxury travel experiences. 
                 Our journey began with a simple mission: to create extraordinary travel experiences that exceed expectations.
               </p>
               <p>

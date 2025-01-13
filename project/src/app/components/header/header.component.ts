@@ -8,13 +8,14 @@ import { MatIconModule } from '@angular/material/icon';
   standalone: true,
   imports: [RouterModule, CommonModule, MatIconModule],
   template: `
-    <header class="fixed w-full top-0 z-50" [class.bg-white]="!isDarkMode" [class.bg-primary]="isDarkMode">
+   <header class="fixed w-full top-0 z-50" [class.bg-white]="!isDarkMode" [class.bg-primary]="isDarkMode">
       <div class="container">
-        <nav class="flex items-center justify-between h-16">
+        <nav class="flex items-center justify-between h-20">
           <!-- Logo -->
           <a routerLink="/" class="flex items-center space-x-2">
-            <span class="text-2xl font-bold gradient-text">Wanderlust</span>
+            <img src="assets/logo.png" alt="Logo" class="h-20 w-auto">
           </a>
+
 
           <!-- Desktop Menu -->
           <div class="hidden md:flex items-center space-x-8">
@@ -140,7 +141,6 @@ export class HeaderComponent {
   isDarkMode = false;
 
   constructor() {
-    // Check for saved theme preference
     const savedTheme = localStorage.getItem('theme');
     this.isDarkMode = savedTheme === 'dark';
     this.applyTheme();

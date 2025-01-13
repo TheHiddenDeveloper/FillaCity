@@ -67,7 +67,7 @@ import { environment } from '../../../environments/environment';
                   </div>
                   <div>
                     <h3 class="font-semibold">Email</h3>
-                    <p class="text-gray-600">infowanderlust.com</p>
+                    <p class="text-gray-600">infoFillaCity Travel and Tour.com</p>
                   </div>
                 </div>
               </div>

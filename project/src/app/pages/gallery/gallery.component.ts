@@ -18,7 +18,7 @@ interface GalleryImage {
     <section class="relative h-[40vh] flex items-center">
       <div class="absolute inset-0">
         <img 
-          src="https://images.unsplash.com/photo-1533105079780-92b9be482077" 
+          src="assets/img-2.jpg" 
           alt="Travel Gallery"
           class="w-full h-full object-cover"
         />
@@ -84,37 +84,37 @@ export class GalleryComponent {
 
   images: GalleryImage[] = [
     {
-      url: 'https://images.unsplash.com/photo-1520483601560-389dff434fdf',
+      url: 'assets/img-3.jpg',
       title: 'Santorini Sunset',
       location: 'Greece',
       category: 'Beach'
     },
     {
-      url: 'https://images.unsplash.com/photo-1513023840371-dd774153c9d5',
+      url: 'assets/img-4.jpg',
       title: 'Alpine Adventure',
       location: 'Switzerland',
       category: 'Mountain'
     },
     {
-      url: 'https://images.unsplash.com/photo-1518548419970-58e3b4079ab2',
+      url: 'assets/img-5.jpg',
       title: 'Tokyo Nights',
       location: 'Japan',
       category: 'City'
     },
     {
-      url: 'https://images.unsplash.com/photo-1501785888041-af3ef285b470',
+      url: 'assets/img-6.jpg',
       title: 'Tropical Paradise',
       location: 'Maldives',
       category: 'Beach'
     },
     {
-      url: 'https://images.unsplash.com/photo-1515859005217-8a1f08870f59',
+      url: 'assets/img-7.jpg',
       title: 'Desert Safari',
       location: 'Dubai',
       category: 'Adventure'
     },
     {
-      url: 'https://images.unsplash.com/photo-1506929562872-bb421503ef21',
+      url: 'assets/img-8.jpg',
       title: 'Mountain Lake',
       location: 'Canada',
       category: 'Mountain'
