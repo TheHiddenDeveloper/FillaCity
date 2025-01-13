@@ -1,95 +1,158 @@
 import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { MatToolbarModule } from '@angular/material/toolbar';
-import { MatButtonModule } from '@angular/material/button';
-import { MatIconModule } from '@angular/material/icon';
-import { MatSidenavModule } from '@angular/material/sidenav';
-import { MatListModule } from '@angular/material/list';
 import { CommonModule } from '@angular/common';
+import { MatIconModule } from '@angular/material/icon';
 
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [
-    RouterModule,
-    MatToolbarModule,
-    MatButtonModule,
-    MatIconModule,
-    MatSidenavModule,
-    MatListModule,
-    CommonModule
-  ],
+  imports: [RouterModule, CommonModule, MatIconModule],
   template: `
-    <header class="fixed w-full top-0 z-50">
-      <nav class="bg-gradient-to-r from-filla-dark to-black shadow-lg">
-        <div class="container mx-auto px-4">
-          <div class="flex items-center justify-between h-20">
-            <!-- Logo -->
-            <div class="flex-shrink-0 flex items-center">
-              <img src="assets/logo.png" alt="Filla City Logo" class="h-12 w-auto">
-              <span class="ml-3 text-filla-gold font-bold text-xl hidden md:block">FILLA CITY</span>
-            </div>
+    <header class="fixed w-full top-0 z-50" [class.bg-white]="!isDarkMode" [class.bg-primary]="isDarkMode">
+      <div class="container">
+        <nav class="flex items-center justify-between h-16">
+          <!-- Logo -->
+          <a routerLink="/" class="flex items-center space-x-2">
+            <span class="text-2xl font-bold gradient-text">Wanderlust</span>
+          </a>
 
-            <!-- Desktop Menu -->
-            <div class="hidden md:flex items-center space-x-8">
-              <a routerLink="/" 
-                 class="text-gray-300 hover:text-filla-gold transition-colors duration-300 flex items-center space-x-1">
-                <mat-icon>home</mat-icon>
-                <span>Home</span>
-              </a>
-              <a routerLink="/about" 
-                 class="text-gray-300 hover:text-filla-gold transition-colors duration-300 flex items-center space-x-1">
-                <mat-icon>info</mat-icon>
-                <span>About</span>
-              </a>
-              <a routerLink="/services" 
-                 class="text-gray-300 hover:text-filla-gold transition-colors duration-300 flex items-center space-x-1">
-                <mat-icon>flight_takeoff</mat-icon>
-                <span>Services</span>
-              </a>
-              <a routerLink="/contact" 
-                 class="text-gray-300 hover:text-filla-gold transition-colors duration-300 flex items-center space-x-1">
-                <mat-icon>contact_support</mat-icon>
-                <span>Contact</span>
-              </a>
-            </div>
+          <!-- Desktop Menu -->
+          <div class="hidden md:flex items-center space-x-8">
+            <a routerLink="/" 
+               routerLinkActive="text-accent"
+               [routerLinkActiveOptions]="{exact: true}"
+               [class.text-gray-600]="!isDarkMode"
+               [class.text-gray-300]="isDarkMode"
+               class="hover:text-accent transition-colors">
+              Home
+            </a>
+            <a routerLink="/about" 
+               routerLinkActive="text-accent"
+               [class.text-gray-600]="!isDarkMode"
+               [class.text-gray-300]="isDarkMode"
+               class="hover:text-accent transition-colors">
+              About
+            </a>
+            <a routerLink="/services" 
+               routerLinkActive="text-accent"
+               [class.text-gray-600]="!isDarkMode"
+               [class.text-gray-300]="isDarkMode"
+               class="hover:text-accent transition-colors">
+              Services
+            </a>
+            <a routerLink="/gallery" 
+               routerLinkActive="text-accent"
+               [class.text-gray-600]="!isDarkMode"
+               [class.text-gray-300]="isDarkMode"
+               class="hover:text-accent transition-colors">
+              Gallery
+            </a>
+            <a routerLink="/contact" 
+               routerLinkActive="text-accent"
+               [class.text-gray-600]="!isDarkMode"
+               [class.text-gray-300]="isDarkMode"
+               class="hover:text-accent transition-colors">
+              Contact
+            </a>
 
-            <!-- Mobile Menu Button -->
+            <!-- Theme Toggle -->
             <button 
-              class="md:hidden text-gray-300 hover:text-filla-gold focus:outline-none"
-              (click)="sidenav.toggle()">
-              <mat-icon>menu</mat-icon>
+              (click)="toggleTheme()"
+              class="w-10 h-10 rounded-full flex items-center justify-center hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+              [class.text-gray-600]="!isDarkMode"
+              [class.text-gray-300]="isDarkMode">
+              <mat-icon>{{ isDarkMode ? 'light_mode' : 'dark_mode' }}</mat-icon>
+            </button>
+          </div>
+
+          <!-- Mobile Menu Button -->
+          <button 
+            (click)="isMenuOpen = !isMenuOpen"
+            [class.text-gray-600]="!isDarkMode"
+            [class.text-gray-300]="isDarkMode"
+            class="md:hidden hover:text-accent focus:outline-none">
+            <mat-icon>{{ isMenuOpen ? 'close' : 'menu' }}</mat-icon>
+          </button>
+        </nav>
+
+        <!-- Mobile Menu -->
+        <div 
+          *ngIf="isMenuOpen"
+          class="md:hidden absolute top-16 left-0 right-0 border-t shadow-lg"
+          [class.bg-white]="!isDarkMode"
+          [class.border-gray-100]="!isDarkMode"
+          [class.bg-primary]="isDarkMode"
+          [class.border-gray-800]="isDarkMode">
+          <div class="container py-4 space-y-4">
+            <a routerLink="/" 
+               (click)="isMenuOpen = false"
+               [class.text-gray-600]="!isDarkMode"
+               [class.text-gray-300]="isDarkMode"
+               class="block hover:text-accent transition-colors">
+              Home
+            </a>
+            <a routerLink="/about"
+               (click)="isMenuOpen = false"
+               [class.text-gray-600]="!isDarkMode"
+               [class.text-gray-300]="isDarkMode"
+               class="block hover:text-accent transition-colors">
+              About
+            </a>
+            <a routerLink="/services"
+               (click)="isMenuOpen = false"
+               [class.text-gray-600]="!isDarkMode"
+               [class.text-gray-300]="isDarkMode"
+               class="block hover:text-accent transition-colors">
+              Services
+            </a>
+            <a routerLink="/gallery"
+               (click)="isMenuOpen = false"
+               [class.text-gray-600]="!isDarkMode"
+               [class.text-gray-300]="isDarkMode"
+               class="block hover:text-accent transition-colors">
+              Gallery
+            </a>
+            <a routerLink="/contact"
+               (click)="isMenuOpen = false"
+               [class.text-gray-600]="!isDarkMode"
+               [class.text-gray-300]="isDarkMode"
+               class="block hover:text-accent transition-colors">
+              Contact
+            </a>
+            
+            <!-- Mobile Theme Toggle -->
+            <button 
+              (click)="toggleTheme()"
+              class="w-full text-left flex items-center space-x-2 hover:text-accent transition-colors"
+              [class.text-gray-600]="!isDarkMode"
+              [class.text-gray-300]="isDarkMode">
+              <mat-icon>{{ isDarkMode ? 'light_mode' : 'dark_mode' }}</mat-icon>
+              <span>{{ isDarkMode ? 'Light Mode' : 'Dark Mode' }}</span>
             </button>
           </div>
         </div>
-      </nav>
-
-      <!-- Mobile Sidenav -->
-      <mat-sidenav #sidenav mode="over" position="end" class="w-64 bg-filla-dark">
-        <mat-nav-list class="p-4">
-          <a mat-list-item routerLink="/" (click)="sidenav.close()" 
-             class="mb-4 text-gray-300 hover:text-filla-gold">
-            <mat-icon class="mr-4 text-filla-gold">home</mat-icon>
-            <span>Home</span>
-          </a>
-          <a mat-list-item routerLink="/about" (click)="sidenav.close()"
-             class="mb-4 text-gray-300 hover:text-filla-gold">
-            <mat-icon class="mr-4 text-filla-gold">info</mat-icon>
-            <span>About</span>
-          </a>
-          <a mat-list-item routerLink="/services" (click)="sidenav.close()"
-             class="mb-4 text-gray-300 hover:text-filla-gold">
-            <mat-icon class="mr-4 text-filla-gold">flight_takeoff</mat-icon>
-            <span>Services</span>
-          </a>
-          <a mat-list-item routerLink="/contact" (click)="sidenav.close()"
-             class="mb-4 text-gray-300 hover:text-filla-gold">
-            <mat-icon class="mr-4 text-filla-gold">contact_support</mat-icon>
-            <span>Contact</span>
-          </a>
-        </mat-nav-list>
-      </mat-sidenav>
+      </div>
     </header>
   `
 })
-export class HeaderComponent {}
+export class HeaderComponent {
+  isMenuOpen = false;
+  isDarkMode = false;
+
+  constructor() {
+    // Check for saved theme preference
+    const savedTheme = localStorage.getItem('theme');
+    this.isDarkMode = savedTheme === 'dark';
+    this.applyTheme();
+  }
+
+  toggleTheme() {
+    this.isDarkMode = !this.isDarkMode;
+    localStorage.setItem('theme', this.isDarkMode ? 'dark' : 'light');
+    this.applyTheme();
+  }
+
+  private applyTheme() {
+    document.documentElement.setAttribute('data-theme', this.isDarkMode ? 'dark' : 'light');
+  }
+}

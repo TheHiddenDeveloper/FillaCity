@@ -2,84 +2,116 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Global styles */
-html,
-body {
-  height: 100%;
-  background-color: #1A1A1A;
-  color: #ffffff;
-  scroll-behavior: smooth;
+:root {
+  /* Light theme variables */
+  --primary: #2563eb;
+  --primary-dark: #1d4ed8;
+  --secondary: #64748b;
+  --accent: #D4AF37;
+  --background: #f8fafc;
+  --text: #0f172a;
+  --text-light: #475569;
+  --card-bg: #ffffff;
+}
+
+[data-theme='dark'] {
+  /* Dark theme variables */
+  --primary: #0A192F;
+  --primary-dark: #051024;
+  --secondary: #64748b;
+  --accent: #D4AF37;
+  --background: #0A192F;
+  --text: #e2e8f0;
+  --text-light: #94a3b8;
+  --card-bg: #112240;
 }
 
 body {
-  margin: 0;
-  font-family: Roboto, "Helvetica Neue", sans-serif;
+  font-family: 'Inter', sans-serif;
+  background-color: var(--background);
+  color: var(--text);
+  transition: background-color 0.3s, color 0.3s;
 }
 
-/* Custom scrollbar */
-::-webkit-scrollbar {
-  width: 8px;
+.gradient-text {
+  @apply bg-gradient-to-r from-accent to-yellow-500 bg-clip-text text-transparent;
 }
 
-::-webkit-scrollbar-track {
-  background: #1A1A1A;
+.btn-primary {
+  @apply bg-accent hover:bg-yellow-500 text-primary font-semibold py-2 px-6 rounded-lg transition-all duration-300 ease-in-out transform hover:scale-105;
 }
 
-::-webkit-scrollbar-thumb {
-  background: #D4AF37;
-  border-radius: 4px;
+.btn-secondary {
+  @apply border-2 border-accent text-accent hover:bg-accent hover:text-primary font-semibold py-2 px-6 rounded-lg transition-all duration-300;
 }
 
-::-webkit-scrollbar-thumb:hover {
-  background: #b69121;
+.card {
+  background-color: var(--card-bg);
+  @apply rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden;
 }
 
-/* Override Material styles for dark theme */
-.mat-mdc-card {
-  background-color: #2C2C2C !important;
-  color: white !important;
+.section-padding {
+  @apply py-16 md:py-24;
 }
 
-.mat-mdc-form-field {
-  width: 100%;
+.container {
+  @apply max-w-7xl mx-auto px-4;
 }
 
-.mat-mdc-form-field-label {
-  color: rgba(255, 255, 255, 0.7) !important;
+/* Dark mode specific styles */
+[data-theme='dark'] .card {
+  @apply shadow-accent/5;
 }
 
-.mat-mdc-text-field-wrapper {
-  background-color: #2C2C2C !important;
+[data-theme='dark'] .btn-primary {
+  @apply text-primary;
 }
 
-.mat-mdc-form-field-input-control {
-  color: white !important;
+[data-theme='dark'] .bg-white {
+  background-color: var(--card-bg);
 }
 
-.mdc-text-field--filled:not(.mdc-text-field--disabled) {
-  background-color: #2C2C2C !important;
+[data-theme='dark'] .bg-gray-50 {
+  background-color: var(--primary-dark);
 }
 
-.mdc-text-field:not(.mdc-text-field--disabled) .mdc-floating-label {
-  color: rgba(255, 255, 255, 0.7) !important;
+[data-theme='dark'] .text-gray-600 {
+  color: var(--text-light);
 }
 
-/* Transitions */
-.transition-all {
-  transition-property: all;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 300ms;
+/* Add these styles to your existing global_styles.css */
+
+[data-theme='dark'] .mat-icon {
+  color: var(--accent);
 }
 
-/* Animations */
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
+[data-theme='dark'] .text-primary {
+  color: var(--accent);
+}
 
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+[data-theme='dark'] .bg-primary\/10 {
+  background-color: var(--accent);
+  opacity: 0.1;
+}
+/* WhatsApp FAB styles */
+.whatsapp-fab {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  z-index: 50;
+  background-color: #25D366;
+  color: white;
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 9999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  transition: all 0.3s ease;
+}
+
+.whatsapp-fab:hover {
+  transform: scale(1.1);
+  background-color: #128C7E;
 }

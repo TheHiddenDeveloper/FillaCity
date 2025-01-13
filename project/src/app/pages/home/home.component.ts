@@ -1,194 +1,162 @@
 import { Component } from '@angular/core';
-import { MatButtonModule } from '@angular/material/button';
 import { CommonModule } from '@angular/common';
-import { MatCardModule } from '@angular/material/card';
+import { RouterModule } from '@angular/router';
 import { MatIconModule } from '@angular/material/icon';
-import { MatFabButton } from '@angular/material/button';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CommonModule, MatButtonModule, MatCardModule, MatIconModule],
+  imports: [CommonModule, RouterModule, MatIconModule],
   template: `
     <!-- Hero Section -->
-    <div class="relative h-[80vh] bg-filla-dark">
-      <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1528747045269-390fe33c19f2')] bg-cover bg-center">
-        <div class="absolute inset-0 bg-black bg-opacity-60"></div>
+    <section class="relative h-screen flex items-center">
+      <div class="absolute inset-0">
+        <img 
+          src="https://images.unsplash.com/photo-1469474968028-56623f02e42e" 
+          alt="Travel"
+          class="w-full h-full object-cover"
+        />
+        <div class="absolute inset-0 bg-black/50"></div>
       </div>
-      <div class="relative h-full flex items-center">
-        <div class="container mx-auto px-4">
-          <h1 class="text-4xl md:text-6xl font-bold mb-6 text-white max-w-3xl">
-            Experience Africa & Beyond with
-            <span class="text-filla-gold">Filla City</span>
+      
+      <div class="container relative z-10">
+        <div class="max-w-3xl">
+          <h1 class="text-5xl md:text-7xl font-bold text-white mb-6">
+            Discover Your Next Adventure
           </h1>
-          <p class="text-xl mb-8 max-w-2xl text-gray-200 text-justify">
-            Your premier travel partner for unforgettable experiences across Africa and worldwide. We specialize in crafting bespoke travel experiences, from African safaris to global adventures.
+          <p class="text-xl text-gray-200 mb-8">
+            Experience the world's most breathtaking destinations with our curated travel experiences
           </p>
-          <div class="space-x-4">
-            <button mat-raised-button class="bg-filla-gold text-filla-dark px-8 py-3 text-lg">
-              Explore Packages
-            </button>
-            <button mat-stroked-button class="border-filla-gold text-filla-gold px-8 py-3 text-lg">
-              Contact Us
-            </button>
+          <div class="flex gap-4">
+            <a routerLink="/services" class="btn-primary">Explore Packages</a>
+            <a routerLink="/contact" class="btn-secondary bg-white">Contact Us</a>
           </div>
         </div>
       </div>
-    </div>
+    </section>
 
     <!-- Featured Destinations -->
-    <section class="py-20 bg-filla-dark">
-      <div class="container mx-auto px-4">
+    <section class="section-padding bg-white">
+      <div class="container">
         <h2 class="text-3xl font-bold mb-12 text-center">
-          Popular <span class="text-filla-gold">Destinations</span>
-        </h2>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <mat-card class="bg-filla-gray">
-            <img src="https://images.unsplash.com/photo-1571406252241-db0280bd36cd" alt="Ghana" class="w-full h-48 object-cover">
-            <div class="p-6">
-              <h3 class="text-xl font-bold mb-2">Ghana</h3>
-              <p class="text-gray-300 mb-4 text-justify">Experience the rich culture, historic castles, and vibrant markets of the Gold Coast.</p>
-              <div class="flex justify-between items-center">
-                <span class="text-filla-gold font-bold">From $899</span>
-                <button mat-button color="accent">Explore Ghana</button>
-              </div>
-            </div>
-          </mat-card>
-
-          <mat-card class="bg-filla-gray">
-            <img src="https://images.unsplash.com/photo-1516026672322-bc52d61a55d5" alt="South Africa" class="w-full h-48 object-cover">
-            <div class="p-6">
-              <h3 class="text-xl font-bold mb-2">South Africa</h3>
-              <p class="text-gray-300 mb-4 text-justify">Discover wildlife safaris, wine routes, and the stunning Cape Town landscape.</p>
-              <div class="flex justify-between items-center">
-                <span class="text-filla-gold font-bold">From $1,299</span>
-                <button mat-button color="accent">Explore South Africa</button>
-              </div>
-            </div>
-          </mat-card>
-
-          <mat-card class="bg-filla-gray">
-            <img src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c" alt="Dubai" class="w-full h-48 object-cover">
-            <div class="p-6">
-              <h3 class="text-xl font-bold mb-2">Dubai</h3>
-              <p class="text-gray-300 mb-4 text-justify">Experience luxury shopping, desert safaris, and modern architectural marvels.</p>
-              <div class="flex justify-between items-center">
-                <span class="text-filla-gold font-bold">From $1,599</span>
-                <button mat-button color="accent">Explore Dubai</button>
-              </div>
-            </div>
-          </mat-card>
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8">
-          <mat-card class="bg-filla-gray">
-            <img src="https://images.unsplash.com/photo-1517935706615-2717063c2225" alt="Canada" class="w-full h-48 object-cover">
-            <div class="p-6">
-              <h3 class="text-xl font-bold mb-2">Canada</h3>
-              <p class="text-gray-300 mb-4 text-justify">Explore stunning natural landscapes, vibrant cities, and diverse culture.</p>
-              <div class="flex justify-between items-center">
-                <span class="text-filla-gold font-bold">From $1,899</span>
-                <button mat-button color="accent">Explore Canada</button>
-              </div>
-            </div>
-          </mat-card>
-
-          <mat-card class="bg-filla-gray">
-            <img src="https://images.unsplash.com/photo-1485738422979-f5c462d49f74" alt="USA" class="w-full h-48 object-cover">
-            <div class="p-6">
-              <h3 class="text-xl font-bold mb-2">USA</h3>
-              <p class="text-gray-300 mb-4 text-justify">Discover iconic cities, national parks, and endless adventures.</p>
-              <div class="flex justify-between items-center">
-                <span class="text-filla-gold font-bold">From $1,799</span>
-                <button mat-button color="accent">Explore USA</button>
-              </div>
-            </div>
-          </mat-card>
-        </div>
-      </div>
-    </section>
-
-    <!-- Why Choose Us -->
-    <section class="py-20 bg-filla-gray">
-      <div class="container mx-auto px-4">
-        <h2 class="text-3xl font-bold mb-12 text-center">Why Choose <span class="text-filla-gold">Filla City</span></h2>
-        <div class="grid grid-cols-1 md:grid-cols-4 gap-8 text-center">
-          <div>
-            <div class="text-filla-gold text-4xl mb-4">✈️</div>
-            <h3 class="text-xl font-bold mb-2">Expert Planning</h3>
-            <p class="text-gray-300 text-justify">Personalized travel itineraries crafted by experienced professionals</p>
-          </div>
-          <div>
-            <div class="text-filla-gold text-4xl mb-4">🏆</div>
-            <h3 class="text-xl font-bold mb-2">Best Value</h3>
-            <p class="text-gray-300 text-justify">Competitive prices with no compromise on quality</p>
-          </div>
-          <div>
-            <div class="text-filla-gold text-4xl mb-4">🌟</div>
-            <h3 class="text-xl font-bold mb-2">Local Expertise</h3>
-            <p class="text-gray-300 text-justify">Deep knowledge of destinations and hidden gems</p>
-          </div>
-          <div>
-            <div class="text-filla-gold text-4xl mb-4">🎯</div>
-            <h3 class="text-xl font-bold mb-2">24/7 Support</h3>
-            <p class="text-gray-300 text-justify">Round-the-clock assistance throughout your journey</p>
-          </div>
-        </div>
-      </div>
-    </section>
-    
-    <!-- Success Gallery Section -->
-    <section class="py-20 bg-filla-dark">
-      <div class="container mx-auto px-4">
-        <h2 class="text-3xl font-bold mb-12 text-center">
-          Our Success <span class="text-filla-gold">Gallery</span>
+          Popular <span class="gradient-text">Destinations</span>
         </h2>
         
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          <!-- Success Cards -->
-          <mat-card class="bg-filla-gray/30 backdrop-blur-lg hover:bg-filla-gray/40 transition-all duration-300">
-            <img mat-card-image src="https://images.unsplash.com/photo-1516026672322-bc52d61a55d5" 
-                 alt="Safari Adventure" class="h-48 object-cover">
-            <mat-card-content class="p-6">
-              <h3 class="text-xl font-bold mb-2">Safari Adventure</h3>
-              <p class="text-gray-300 mb-4">Organized a memorable safari expedition for 20+ guests, featuring exclusive wildlife encounters and luxury accommodations.</p>
-              <div class="flex items-center text-filla-gold">
-                <mat-icon class="mr-2">star</mat-icon>
-                <span>5.0 Rating</span>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div class="card group">
+            <div class="relative overflow-hidden">
+              <img 
+                src="https://images.unsplash.com/photo-1571406252241-db0280bd36cd" 
+                alt="Destination" 
+                class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-300"
+              />
+              <div class="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/80 to-transparent">
+                <h3 class="text-xl font-bold text-white">Santorini, Greece</h3>
+                <p class="text-gray-200">From $899</p>
               </div>
-            </mat-card-content>
-          </mat-card>
+            </div>
+          </div>
 
-          <!-- Add more success cards (total of 14) following the same pattern -->
-          <!-- Example of additional cards: -->
-          <mat-card class="bg-filla-gray/30 backdrop-blur-lg hover:bg-filla-gray/40 transition-all duration-300">
-            <img mat-card-image src="https://images.unsplash.com/photo-1571406252241-db0280bd36cd" 
-                 alt="Ghana Cultural Tour" class="h-48 object-cover">
-            <mat-card-content class="p-6">
-              <h3 class="text-xl font-bold mb-2">Ghana Cultural Tour</h3>
-              <p class="text-gray-300 mb-4">Curated an immersive cultural experience for international visitors, showcasing Ghana's rich heritage and traditions.</p>
-              <div class="flex items-center text-filla-gold">
-                <mat-icon class="mr-2">star</mat-icon>
-                <span>4.9 Rating</span>
+          <div class="card group">
+            <div class="relative overflow-hidden">
+              <img 
+                src="https://images.unsplash.com/photo-1516026672322-bc52d61a55d5" 
+                alt="Destination" 
+                class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-300"
+              />
+              <div class="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/80 to-transparent">
+                <h3 class="text-xl font-bold text-white">Bali, Indonesia</h3>
+                <p class="text-gray-200">From $799</p>
               </div>
-            </mat-card-content>
-          </mat-card>
+            </div>
+          </div>
 
-          <!-- Continue adding more cards... -->
-        </div>
-
-        <!-- Pagination or Load More -->
-        <div class="text-center mt-12">
-          <button mat-raised-button class="bg-filla-gold text-filla-dark px-8 py-3">
-            Load More Success Stories
-          </button>
+          <div class="card group">
+            <div class="relative overflow-hidden">
+              <img 
+                src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c" 
+                alt="Destination" 
+                class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-300"
+              />
+              <div class="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/80 to-transparent">
+                <h3 class="text-xl font-bold text-white">Dubai, UAE</h3>
+                <p class="text-gray-200">From $1,299</p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
+    <!-- Features -->
+    <section class="section-padding bg-gray-50">
+      <div class="container">
+        <h2 class="text-3xl font-bold mb-12 text-center">
+          Why Choose <span class="gradient-text">Us</span>
+        </h2>
+        
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+          <div class="text-center">
+            <div class="w-16 h-16 mx-auto mb-4 bg-primary/10 rounded-full flex items-center justify-center">
+              <mat-icon class="text-primary text-3xl">flight</mat-icon>
+            </div>
+            <h3 class="text-xl font-bold mb-2">Best Flights</h3>
+            <p class="text-gray-600">Handpicked flights for comfort and value</p>
+          </div>
+
+          <div class="text-center">
+            <div class="w-16 h-16 mx-auto mb-4 bg-primary/10 rounded-full flex items-center justify-center">
+              <mat-icon class="text-primary text-3xl">hotel</mat-icon>
+            </div>
+            <h3 class="text-xl font-bold mb-2">Top Hotels</h3>
+            <p class="text-gray-600">Luxury stays at competitive prices</p>
+          </div>
+
+          <div class="text-center">
+            <div class="w-16 h-16 mx-auto mb-4 bg-primary/10 rounded-full flex items-center justify-center">
+              <mat-icon class="text-primary text-3xl">support_agent</mat-icon>
+            </div>
+            <h3 class="text-xl font-bold mb-2">24/7 Support</h3>
+            <p class="text-gray-600">Always here when you need us</p>
+          </div>
+
+          <div class="text-center">
+            <div class="w-16 h-16 mx-auto mb-4 bg-primary/10 rounded-full flex items-center justify-center">
+              <mat-icon class="text-primary text-3xl">savings</mat-icon>
+            </div>
+            <h3 class="text-xl font-bold mb-2">Best Prices</h3>
+            <p class="text-gray-600">Unbeatable value for your journey</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="relative py-20">
+      <div class="absolute inset-0">
+        <img 
+          src="https://images.unsplash.com/photo-1469474968028-56623f02e42e" 
+          alt="Travel"
+          class="w-full h-full object-cover"
+        />
+        <div class="absolute inset-0 bg-primary/80"></div>
+      </div>
+      
+      <div class="container relative z-10 text-center">
+        <h2 class="text-4xl font-bold text-white mb-6">
+          Ready to Start Your Journey?
+        </h2>
+        <p class="text-xl text-gray-200 mb-8 max-w-2xl mx-auto">
+          Let us help you plan the perfect getaway. Contact us today and begin your adventure.
+        </p>
+        <a routerLink="/contact" class="btn-secondary bg-white inline-block">
+          Get Started
+        </a>
+      </div>
+    </section>
 
     <!-- WhatsApp Button -->
-    <a href="https://wa.me/YOUR_WHATSAPP_NUMBER" 
+    <a href="https://wa.me/+233599135546" 
        target="_blank" 
        class="fixed bottom-6 right-6 z-50 bg-green-500 text-white rounded-full p-4 shadow-lg hover:bg-green-600 transition-colors">
       <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">

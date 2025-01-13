@@ -1,70 +1,204 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
-import { MatButtonModule } from '@angular/material/button';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-services',
   standalone: true,
-  imports: [CommonModule, MatCardModule, MatIconModule, MatButtonModule],
+  imports: [CommonModule, MatIconModule, RouterModule],
   template: `
-    <div class="min-h-screen bg-filla-dark py-20">
-      <div class="container mx-auto px-4">
-        <h1 class="text-4xl font-bold mb-12 text-center">
-          Our <span class="text-filla-gold">Services</span>
+    <!-- Hero Section -->
+    <section class="relative h-[40vh] flex items-center">
+      <div class="absolute inset-0">
+        <img 
+          src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05" 
+          alt="Our Services"
+          class="w-full h-full object-cover"
+        />
+        <div class="absolute inset-0 bg-black/60"></div>
+      </div>
+      
+      <div class="container relative z-10">
+        <h1 class="text-4xl md:text-5xl font-bold text-white mb-4">
+          Our <span class="text-accent">Services</span>
         </h1>
+        <p class="text-xl text-gray-200 max-w-2xl">
+          Comprehensive travel solutions tailored to your needs
+        </p>
+      </div>
+    </section>
+
+    <!-- Main Services -->
+    <section class="section-padding bg-white">
+      <div class="container">
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <mat-card class="bg-filla-gray">
-            <img src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05" alt="Flight Bookings" class="w-full h-48 object-cover">
+          <div class="card group">
+            <div class="relative h-48">
+              <img 
+                src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05" 
+                alt="Flight Bookings" 
+                class="w-full h-full object-cover"
+              />
+              <div class="absolute inset-0 bg-black/50 flex items-center justify-center">
+                <mat-icon class="text-white text-5xl">flight</mat-icon>
+              </div>
+            </div>
             <div class="p-6">
               <h3 class="text-xl font-bold mb-4">Flight Bookings</h3>
-              <ul class="space-y-2 text-gray-300 mb-6">
-                <li>✓ Best airline deals</li>
-                <li>✓ Flexible booking options</li>
-                <li>✓ Premium class upgrades</li>
-                <li>✓ Airport lounge access</li>
+              <ul class="space-y-2 text-gray-600 mb-6">
+                <li class="flex items-center">
+                  <mat-icon class="text-primary mr-2">check_circle</mat-icon>
+                  Premium airline partnerships
+                </li>
+                <li class="flex items-center">
+                  <mat-icon class="text-primary mr-2">check_circle</mat-icon>
+                  Flexible booking options
+                </li>
+                <li class="flex items-center">
+                  <mat-icon class="text-primary mr-2">check_circle</mat-icon>
+                  24/7 flight support
+                </li>
+                <li class="flex items-center">
+                  <mat-icon class="text-primary mr-2">check_circle</mat-icon>
+                  Best price guarantee
+                </li>
               </ul>
-              <button mat-raised-button class="bg-filla-gold text-filla-dark w-full">
-                Book Now
-              </button>
+              <a routerLink="/contact" class="btn-primary block text-center">Book Now</a>
             </div>
-          </mat-card>
+          </div>
 
-          <mat-card class="bg-filla-gray">
-            <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945" alt="Hotel Reservations" class="w-full h-48 object-cover">
+          <div class="card group">
+            <div class="relative h-48">
+              <img 
+                src="https://images.unsplash.com/photo-1566073771259-6a8506099945" 
+                alt="Accommodations" 
+                class="w-full h-full object-cover"
+              />
+              <div class="absolute inset-0 bg-black/50 flex items-center justify-center">
+                <mat-icon class="text-white text-5xl">hotel</mat-icon>
+              </div>
+            </div>
             <div class="p-6">
-              <h3 class="text-xl font-bold mb-4">Hotel Reservations</h3>
-              <ul class="space-y-2 text-gray-300 mb-6">
-                <li>✓ Luxury accommodations</li>
-                <li>✓ Best price guarantee</li>
-                <li>✓ Free cancellation</li>
-                <li>✓ Special perks & amenities</li>
+              <h3 class="text-xl font-bold mb-4">Accommodations</h3>
+              <ul class="space-y-2 text-gray-600 mb-6">
+                <li class="flex items-center">
+                  <mat-icon class="text-primary mr-2">check_circle</mat-icon>
+                  Luxury hotels & resorts
+                </li>
+                <li class="flex items-center">
+                  <mat-icon class="text-primary mr-2">check_circle</mat-icon>
+                  Exclusive rates
+                </li>
+                <li class="flex items-center">
+                  <mat-icon class="text-primary mr-2">check_circle</mat-icon>
+                  Room upgrades
+                </li>
+                <li class="flex items-center">
+                  <mat-icon class="text-primary mr-2">check_circle</mat-icon>
+                  VIP amenities
+                </li>
               </ul>
-              <button mat-raised-button class="bg-filla-gold text-filla-dark w-full">
-                Find Hotels
-              </button>
+              <a routerLink="/contact" class="btn-primary block text-center">Find Hotels</a>
             </div>
-          </mat-card>
+          </div>
 
-          <mat-card class="bg-filla-gray">
-            <img src="https://images.unsplash.com/photo-1469474968028-56623f02e42e" alt="Tour Packages" class="w-full h-48 object-cover">
+          <div class="card group">
+            <div class="relative h-48">
+              <img 
+                src="https://images.unsplash.com/photo-1469474968028-56623f02e42e" 
+                alt="Tour Packages" 
+                class="w-full h-full object-cover"
+              />
+              <div class="absolute inset-0 bg-black/50 flex items-center justify-center">
+                <mat-icon class="text-white text-5xl">map</mat-icon>
+              </div>
+            </div>
             <div class="p-6">
               <h3 class="text-xl font-bold mb-4">Tour Packages</h3>
-              <ul class="space-y-2 text-gray-300 mb-6">
-                <li>✓ Customized itineraries</li>
-                <li>✓ Expert local guides</li>
-                <li>✓ All-inclusive options</li>
-                <li>✓ Group discounts</li>
+              <ul class="space-y-2 text-gray-600 mb-6">
+                <li class="flex items-center">
+                  <mat-icon class="text-primary mr-2">check_circle</mat-icon>
+                  Customized itineraries
+                </li>
+                <li class="flex items-center">
+                  <mat-icon class="text-primary mr-2">check_circle</mat-icon>
+                  Expert local guides
+                </li>
+                <li class="flex items-center">
+                  <mat-icon class="text-primary mr-2">check_circle</mat-icon>
+                  Unique experiences
+                </li>
+                <li class="flex items-center">
+                  <mat-icon class="text-primary mr-2">check_circle</mat-icon>
+                  Group discounts
+                </li>
               </ul>
-              <button mat-raised-button class="bg-filla-gold text-filla-dark w-full">
-                Explore Tours
-              </button>
+              <a routerLink="/contact" class="btn-primary block text-center">Explore Tours</a>
             </div>
-          </mat-card>
+          </div>
         </div>
       </div>
-    </div>
+    </section>
+
+    <!-- Additional Services -->
+    <section class="section-padding bg-gray-50">
+      <div class="container">
+        <h2 class="text-3xl font-bold text-center mb-12">
+          Additional <span class="gradient-text">Services</span>
+        </h2>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div class="card p-6 flex items-start space-x-4">
+            <div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
+              <mat-icon class="text-primary">directions_car</mat-icon>
+            </div>
+            <div>
+              <h3 class="text-xl font-bold mb-2">Transportation</h3>
+              <p class="text-gray-600">
+                From luxury car rentals to private transfers, we ensure comfortable and reliable transportation throughout your journey.
+              </p>
+            </div>
+          </div>
+
+          <div class="card p-6 flex items-start space-x-4">
+            <div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
+              <mat-icon class="text-primary">restaurant</mat-icon>
+            </div>
+            <div>
+              <h3 class="text-xl font-bold mb-2">Dining Reservations</h3>
+              <p class="text-gray-600">
+                Access to exclusive restaurants and unique dining experiences around the world.
+              </p>
+            </div>
+          </div>
+
+          <div class="card p-6 flex items-start space-x-4">
+            <div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
+              <mat-icon class="text-primary">theater_comedy</mat-icon>
+            </div>
+            <div>
+              <h3 class="text-xl font-bold mb-2">Event Tickets</h3>
+              <p class="text-gray-600">
+                Premium access to shows, sports events, and cultural activities at your destination.
+              </p>
+            </div>
+          </div>
+
+          <div class="card p-6 flex items-start space-x-4">
+            <div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
+              <mat-icon class="text-primary">health_and_safety</mat-icon>
+            </div>
+            <div>
+              <h3 class="text-xl font-bold mb-2">Travel Insurance</h3>
+              <p class="text-gray-600">
+                Comprehensive travel insurance options to protect your journey and investment.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
   `
 })
 export class ServicesComponent {}
