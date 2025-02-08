@@ -18,9 +18,6 @@ jobs:
         with:
           node-version: 18 # Match this with your Angular project
 
-      - name: Navigate to project folder
-        run: cd project
-
       - name: Install Dependencies
         run: npm install
 
