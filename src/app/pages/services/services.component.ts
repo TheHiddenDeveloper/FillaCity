@@ -41,9 +41,11 @@ import { RouterModule } from "@angular/router";
                 class="w-full h-full object-cover"
               />
               <div
-                class="absolute inset-0 bg-black/50 flex items-center justify-center"
+                class="absolute inset-0 bg-black/50 dark:bg-black/50 flex items-center justify-center"
               >
-                <i class="fas fa-plane text-3xl text-white"></i>
+                <i
+                  class="fas fa-plane text-2xl text-white dark:!text-yellow-500"
+                ></i>
               </div>
             </div>
             <div class="p-6">
@@ -80,9 +82,11 @@ import { RouterModule } from "@angular/router";
                 class="w-full h-full object-cover"
               />
               <div
-                class="absolute inset-0 bg-black/50 flex items-center justify-center"
+                class="absolute inset-0 bg-black/50 dark:bg-black/50 flex items-center justify-center"
               >
-                <i class="fas fa-hotel text-3xl text-white"></i>
+                <i
+                  class="fas fa-hotel text-2xl text-white dark:!text-yellow-500"
+                ></i>
               </div>
             </div>
             <div class="p-6">
@@ -119,9 +123,11 @@ import { RouterModule } from "@angular/router";
                 class="w-full h-full object-cover"
               />
               <div
-                class="absolute inset-0 bg-black/50 flex items-center justify-center"
+                class="absolute inset-0 bg-black/50 dark:bg-black/50 flex items-center justify-center"
               >
-                <i class="fas fa-map text-3xl text-white"></i>
+                <i
+                  class="fas fa-map text-2xl text-white dark:!text-yellow-500"
+                ></i>
               </div>
             </div>
             <div class="p-6">
@@ -163,9 +169,9 @@ import { RouterModule } from "@angular/router";
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
           <div class="card p-6 flex items-start space-x-4">
             <div
-              class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0"
+              class="w-12 h-12 bg-primary/20 dark:bg-primary/20 rounded-lg flex items-center justify-center flex-shrink-0"
             >
-              <mat-icon class="text-primary">directions_car</mat-icon>
+              <i class="fas fa-car dark:!text-yellow-500"></i>
             </div>
             <div>
               <h3 class="text-xl font-bold mb-2">Transportation</h3>
@@ -178,9 +184,9 @@ import { RouterModule } from "@angular/router";
 
           <div class="card p-6 flex items-start space-x-4">
             <div
-              class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0"
+              class="w-12 h-12 bg-primary/20 dark:bg-primary/20 rounded-lg flex items-center justify-center flex-shrink-0"
             >
-              <mat-icon class="text-primary">restaurant</mat-icon>
+              <i class="fas fa-utensils dark:!text-yellow-500"></i>
             </div>
             <div>
               <h3 class="text-xl font-bold mb-2">Dining Reservations</h3>
@@ -193,9 +199,9 @@ import { RouterModule } from "@angular/router";
 
           <div class="card p-6 flex items-start space-x-4">
             <div
-              class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0"
+              class="w-12 h-12 bg-primary/20 dark:bg-primary/20 rounded-lg flex items-center justify-center flex-shrink-0"
             >
-              <mat-icon class="text-primary">theater_comedy</mat-icon>
+              <i class="fas fa-masks-theater dark:!text-yellow-500"></i>
             </div>
             <div>
               <h3 class="text-xl font-bold mb-2">Event Tickets</h3>
@@ -208,9 +214,9 @@ import { RouterModule } from "@angular/router";
 
           <div class="card p-6 flex items-start space-x-4">
             <div
-              class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0"
+              class="w-12 h-12 bg-primary/20 dark:bg-primary/20 rounded-lg flex items-center justify-center flex-shrink-0"
             >
-              <mat-icon class="text-primary">health_and_safety</mat-icon>
+              <i class="fas fa-shield-heart dark:!text-yellow-500"></i>
             </div>
             <div>
               <h3 class="text-xl font-bold mb-2">Travel Insurance</h3>

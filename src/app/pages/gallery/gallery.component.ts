@@ -42,7 +42,7 @@ interface GalleryImage {
           <button
             *ngFor="let category of categories"
             (click)="filterImages(category)"
-            class="px-6 py-2 rounded-full transition-all"
+            class="px-6 py-2 rounded-full transition-all text-primary"
             [class.bg-primary]="selectedCategory === category"
             [class.text-white]="selectedCategory === category"
             [class.bg-gray-100]="selectedCategory !== category"

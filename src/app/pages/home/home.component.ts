@@ -56,7 +56,7 @@ import { MatIconModule } from "@angular/material/icon";
               <div
                 class="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/80 to-transparent"
               >
-                <h3 class="text-xl font-bold text-white">Santorini, Greece</h3>
+                <h3 class="text-xl font-bold text-white">Iowa, USA</h3>
                 <p class="text-gray-200">From $899</p>
               </div>
             </div>
@@ -72,7 +72,7 @@ import { MatIconModule } from "@angular/material/icon";
               <div
                 class="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/80 to-transparent"
               >
-                <h3 class="text-xl font-bold text-white">Bali, Indonesia</h3>
+                <h3 class="text-xl font-bold text-white">Ajman, UAE</h3>
                 <p class="text-gray-200">From $799</p>
               </div>
             </div>
@@ -107,9 +107,9 @@ import { MatIconModule } from "@angular/material/icon";
         <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div class="text-center">
             <div
-              class="w-20 h-20 mx-auto mb-6 bg-primary/10 rounded-full flex items-center justify-center"
+              class="w-20 h-20 mx-auto mb-6 bg-primary/20 dark:bg-primary/20 rounded-full flex items-center justify-center"
             >
-              <i class="fas fa-plane text-3xl"></i>
+              <i class="fas fa-plane text-2xl dark:!text-yellow-500"></i>
             </div>
             <h3 class="text-xl font-bold mb-2">Best Flights</h3>
             <p class="text-gray-600">
@@ -119,9 +119,9 @@ import { MatIconModule } from "@angular/material/icon";
 
           <div class="text-center">
             <div
-              class="w-20 h-20 mx-auto mb-6 bg-primary/10 rounded-full flex items-center justify-center"
+              class="w-20 h-20 mx-auto mb-6 bg-primary/20  dark:bg-primary/20 rounded-full flex items-center justify-center"
             >
-              <i class="fas fa-hotel text-3xl"></i>
+              <i class="fas fa-hotel text-2xl dark:!text-yellow-500"></i>
             </div>
             <h3 class="text-xl font-bold mb-2">Top Hotels</h3>
             <p class="text-gray-600">Luxury stays at competitive prices</p>
@@ -129,9 +129,9 @@ import { MatIconModule } from "@angular/material/icon";
 
           <div class="text-center">
             <div
-              class="w-20 h-20 mx-auto mb-6 bg-primary/10 rounded-full flex items-center justify-center"
+              class="w-20 h-20 mx-auto mb-6 bg-primary/20  dark:bg-primary/20 rounded-full flex items-center justify-center"
             >
-              <i class="fas fa-headset text-3xl"></i>
+              <i class="fas fa-headset text-2xl dark:!text-yellow-500"></i>
             </div>
             <h3 class="text-xl font-bold mb-2">24/7 Support</h3>
             <p class="text-gray-600">Always here when you need us</p>
@@ -139,9 +139,9 @@ import { MatIconModule } from "@angular/material/icon";
 
           <div class="text-center">
             <div
-              class="w-20 h-20 mx-auto mb-6 bg-primary/10 rounded-full flex items-center justify-center"
+              class="w-20 h-20 mx-auto mb-6 bg-primary/20  dark:bg-primary/20 rounded-full flex items-center justify-center"
             >
-              <i class="fas fa-piggy-bank text-3xl"></i>
+              <i class="fas fa-piggy-bank text-2xl dark:!text-yellow-500"></i>
             </div>
             <h3 class="text-xl font-bold mb-2">Best Prices</h3>
             <p class="text-gray-600">Unbeatable value for your journey</p>

@@ -48,9 +48,9 @@ import { environment } from "../../../environments/environment";
               <div class="space-y-4">
                 <div class="flex items-start space-x-4">
                   <div
-                    class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0"
+                    class="w-12 h-12 bg-primary/20 dark:bg-primary/20 rounded-lg flex items-center justify-center flex-shrink-0"
                   >
-                    <mat-icon class="text-primary">location_on</mat-icon>
+                    <i class="fas fa-map-marker-alt dark:!text-yellow-500"></i>
                   </div>
                   <div>
                     <h3 class="font-semibold">Address</h3>
@@ -62,9 +62,9 @@ import { environment } from "../../../environments/environment";
 
                 <div class="flex items-start space-x-4">
                   <div
-                    class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0"
+                    class="w-12 h-12 bg-primary/20 dark:bg-primary/20 rounded-lg flex items-center justify-center flex-shrink-0"
                   >
-                    <mat-icon class="text-primary">phone</mat-icon>
+                    <i class="fas fa-phone dark:!text-yellow-500"></i>
                   </div>
                   <div>
                     <h3 class="font-semibold">Phone</h3>
@@ -74,9 +74,9 @@ import { environment } from "../../../environments/environment";
 
                 <div class="flex items-start space-x-4">
                   <div
-                    class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0"
+                    class="w-12 h-12 bg-primary/20 dark:bg-primary/20 rounded-lg flex items-center justify-center flex-shrink-0"
                   >
-                    <mat-icon class="text-primary">email</mat-icon>
+                    <i class="fas fa-envelope dark:!text-yellow-500"></i>
                   </div>
                   <div>
                     <h3 class="font-semibold">Email</h3>
@@ -100,21 +100,27 @@ import { environment } from "../../../environments/environment";
               <div class="flex space-x-4">
                 <a
                   href="#"
-                  class="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center hover:bg-primary/20 transition-colors"
+                  class="w-10 h-10 bg-primary/20 dark:bg-primary/20 rounded-lg flex items-center justify-center hover:bg-primary/20 transition-colors"
                 >
-                  <i class="fab fa-facebook text-primary"></i>
+                  <i
+                    class="fab fa-facebook text-primary dark:!text-yellow-500"
+                  ></i>
                 </a>
                 <a
                   href="#"
-                  class="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center hover:bg-primary/20 transition-colors"
+                  class="w-10 h-10 bg-primary/20 dark:bg-primary/20 rounded-lg flex items-center justify-center hover:bg-primary/20 transition-colors"
                 >
-                  <i class="fab fa-twitter text-primary"></i>
+                  <i
+                    class="fab fa-twitter text-primary dark:!text-yellow-500"
+                  ></i>
                 </a>
                 <a
                   href="#"
-                  class="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center hover:bg-primary/20 transition-colors"
+                  class="w-10 h-10 bg-primary/20 dark:bg-primary/20 rounded-lg flex items-center justify-center hover:bg-primary/20 transition-colors"
                 >
-                  <i class="fab fa-instagram text-primary"></i>
+                  <i
+                    class="fab fa-instagram text-primary dark:!text-yellow-500"
+                  ></i>
                 </a>
               </div>
             </div>
@@ -131,7 +137,8 @@ import { environment } from "../../../environments/environment";
               >
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
-                    <label class="block text-sm font-medium text-gray-700 mb-2"
+                    <label
+                      class="block text-sm font-medium text-gray-700 dark:text-yellow-300 mb-2"
                       >First Name</label
                     >
                     <input
@@ -147,7 +154,8 @@ import { environment } from "../../../environments/environment";
                   </div>
 
                   <div>
-                    <label class="block text-sm font-medium text-gray-700 mb-2"
+                    <label
+                      class="block text-sm font-medium text-gray-700 dark:text-yellow-300 mb-2"
                       >Last Name</label
                     >
                     <input
@@ -164,7 +172,8 @@ import { environment } from "../../../environments/environment";
                 </div>
 
                 <div>
-                  <label class="block text-sm font-medium text-gray-700 mb-2"
+                  <label
+                    class="block text-sm font-medium text-gray-700 dark:text-yellow-300 mb-2"
                     >Email</label
                   >
                   <input
@@ -180,7 +189,8 @@ import { environment } from "../../../environments/environment";
                 </div>
 
                 <div>
-                  <label class="block text-sm font-medium text-gray-700 mb-2"
+                  <label
+                    class="block text-sm font-medium text-gray-700 dark:text-yellow-300 mb-2"
                     >Phone</label
                   >
                   <input
@@ -196,7 +206,8 @@ import { environment } from "../../../environments/environment";
                 </div>
 
                 <div>
-                  <label class="block text-sm font-medium text-gray-700 mb-2"
+                  <label
+                    class="block text-sm font-medium text-gray-700 dark:text-yellow-300 mb-2"
                     >Message</label
                   >
                   <textarea
@@ -219,7 +230,7 @@ import { environment } from "../../../environments/environment";
                   <span>{{
                     isSubmitting ? "Sending..." : "Send Message"
                   }}</span>
-                  <mat-icon class="ml-2">send</mat-icon>
+                  <i class="fas fa-paper-plane ml-2"></i>
                 </button>
               </form>
             </div>
