@@ -7,27 +7,27 @@
   --primary: #2563eb;
   --primary-dark: #1d4ed8;
   --secondary: #64748b;
-  --accent: #D4AF37;
+  --accent: #d4af37;
   --background: #f8fafc;
   --text: #0f172a;
   --text-light: #475569;
   --card-bg: #ffffff;
 }
 
-[data-theme='dark'] {
+[data-theme="dark"] {
   /* Dark theme variables */
-  --primary: #0A192F;
+  --primary: #0a192f;
   --primary-dark: #051024;
   --secondary: #64748b;
-  --accent: #D4AF37;
-  --background: #0A192F;
+  --accent: #d4af37;
+  --background: #0a192f;
   --text: #e2e8f0;
   --text-light: #94a3b8;
   --card-bg: #112240;
 }
 
 body {
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   background-color: var(--background);
   color: var(--text);
   transition: background-color 0.3s, color 0.3s;
@@ -59,37 +59,37 @@ body {
 }
 
 /* Dark mode specific styles */
-[data-theme='dark'] .card {
+[data-theme="dark"] .card {
   @apply shadow-accent/5;
 }
 
-[data-theme='dark'] .btn-primary {
+[data-theme="dark"] .btn-primary {
   @apply text-primary;
 }
 
-[data-theme='dark'] .bg-white {
+[data-theme="dark"] .bg-white {
   background-color: var(--card-bg);
 }
 
-[data-theme='dark'] .bg-gray-50 {
+[data-theme="dark"] .bg-gray-50 {
   background-color: var(--primary-dark);
 }
 
-[data-theme='dark'] .text-gray-600 {
+[data-theme="dark"] .text-gray-600 {
   color: var(--text-light);
 }
 
 /* Add these styles to your existing global_styles.css */
 
-[data-theme='dark'] .mat-icon {
+[data-theme="dark"] .mat-icon {
   color: var(--accent);
 }
 
-[data-theme='dark'] .text-primary {
+[data-theme="dark"] .text-primary {
   color: var(--accent);
 }
 
-[data-theme='dark'] .bg-primary\/10 {
+[data-theme="dark"] .bg-primary\/10 {
   background-color: var(--accent);
   opacity: 0.1;
 }
@@ -99,7 +99,7 @@ body {
   bottom: 2rem;
   right: 2rem;
   z-index: 50;
-  background-color: #25D366;
+  background-color: #25d366;
   color: white;
   width: 3.5rem;
   height: 3.5rem;
@@ -107,11 +107,12 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06);
   transition: all 0.3s ease;
 }
 
 .whatsapp-fab:hover {
   transform: scale(1.1);
-  background-color: #128C7E;
+  background-color: #128c7e;
 }

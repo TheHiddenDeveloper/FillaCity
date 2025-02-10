@@ -1,27 +1,27 @@
-import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { MatIconModule } from '@angular/material/icon';
-import { RouterModule } from '@angular/router';
+import { Component } from "@angular/core";
+import { CommonModule } from "@angular/common";
+import { MatIconModule } from "@angular/material/icon";
+import { RouterModule } from "@angular/router";
 
 @Component({
-  selector: 'app-services',
+  selector: "app-services",
   standalone: true,
   imports: [CommonModule, MatIconModule, RouterModule],
   template: `
     <!-- Hero Section -->
     <section class="relative h-[40vh] flex items-center">
       <div class="absolute inset-0">
-        <img 
-          src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05" 
+        <img
+          src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05"
           alt="Our Services"
           class="w-full h-full object-cover"
         />
         <div class="absolute inset-0 bg-black/60"></div>
       </div>
-      
+
       <div class="container relative z-10">
         <h1 class="text-4xl md:text-5xl font-bold text-white mb-4">
-          Our <span class="text-accent">Services</span>
+          Our <span class="t<mext-accent">Services</span>
         </h1>
         <p class="text-xl text-gray-200 max-w-2xl">
           Comprehensive travel solutions tailored to your needs
@@ -35,13 +35,17 @@ import { RouterModule } from '@angular/router';
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div class="card group">
             <div class="relative h-48">
-              <img 
-                src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05" 
-                alt="Flight Bookings" 
+              <img
+                src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05"
+                alt="Flight Bookings"
                 class="w-full h-full object-cover"
               />
-              <div class="absolute inset-0 bg-black/50 flex items-center justify-center">
-                <mat-icon class="text-white text-5xl">flight</mat-icon>
+              <div
+                class="absolute inset-0 bg-black/50 dark:bg-black/50 flex items-center justify-center"
+              >
+                <i
+                  class="fas fa-plane text-2xl text-white dark:!text-yellow-500"
+                ></i>
               </div>
             </div>
             <div class="p-6">
@@ -64,19 +68,25 @@ import { RouterModule } from '@angular/router';
                   Best price guarantee
                 </li>
               </ul>
-              <a routerLink="/contact" class="btn-primary block text-center">Book Now</a>
+              <a routerLink="/contact" class="btn-primary block text-center"
+                >Book Now</a
+              >
             </div>
           </div>
 
           <div class="card group">
             <div class="relative h-48">
-              <img 
-                src="https://images.unsplash.com/photo-1566073771259-6a8506099945" 
-                alt="Accommodations" 
+              <img
+                src="https://images.unsplash.com/photo-1566073771259-6a8506099945"
+                alt="Accommodations"
                 class="w-full h-full object-cover"
               />
-              <div class="absolute inset-0 bg-black/50 flex items-center justify-center">
-                <mat-icon class="text-white text-5xl">hotel</mat-icon>
+              <div
+                class="absolute inset-0 bg-black/50 dark:bg-black/50 flex items-center justify-center"
+              >
+                <i
+                  class="fas fa-hotel text-2xl text-white dark:!text-yellow-500"
+                ></i>
               </div>
             </div>
             <div class="p-6">
@@ -99,19 +109,25 @@ import { RouterModule } from '@angular/router';
                   VIP amenities
                 </li>
               </ul>
-              <a routerLink="/contact" class="btn-primary block text-center">Find Hotels</a>
+              <a routerLink="/contact" class="btn-primary block text-center"
+                >Find Hotels</a
+              >
             </div>
           </div>
 
           <div class="card group">
             <div class="relative h-48">
-              <img 
-                src="https://images.unsplash.com/photo-1469474968028-56623f02e42e" 
-                alt="Tour Packages" 
+              <img
+                src="https://images.unsplash.com/photo-1469474968028-56623f02e42e"
+                alt="Tour Packages"
                 class="w-full h-full object-cover"
               />
-              <div class="absolute inset-0 bg-black/50 flex items-center justify-center">
-                <mat-icon class="text-white text-5xl">map</mat-icon>
+              <div
+                class="absolute inset-0 bg-black/50 dark:bg-black/50 flex items-center justify-center"
+              >
+                <i
+                  class="fas fa-map text-2xl text-white dark:!text-yellow-500"
+                ></i>
               </div>
             </div>
             <div class="p-6">
@@ -134,7 +150,9 @@ import { RouterModule } from '@angular/router';
                   Group discounts
                 </li>
               </ul>
-              <a routerLink="/contact" class="btn-primary block text-center">Explore Tours</a>
+              <a routerLink="/contact" class="btn-primary block text-center"
+                >Explore Tours</a
+              >
             </div>
           </div>
         </div>
@@ -147,58 +165,70 @@ import { RouterModule } from '@angular/router';
         <h2 class="text-3xl font-bold text-center mb-12">
           Additional <span class="gradient-text">Services</span>
         </h2>
-        
+
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
           <div class="card p-6 flex items-start space-x-4">
-            <div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
-              <mat-icon class="text-primary">directions_car</mat-icon>
+            <div
+              class="w-12 h-12 bg-primary/20 dark:bg-primary/20 rounded-lg flex items-center justify-center flex-shrink-0"
+            >
+              <i class="fas fa-car dark:!text-yellow-500"></i>
             </div>
             <div>
               <h3 class="text-xl font-bold mb-2">Transportation</h3>
               <p class="text-gray-600">
-                From luxury car rentals to private transfers, we ensure comfortable and reliable transportation throughout your journey.
+                From luxury car rentals to private transfers, we ensure
+                comfortable and reliable transportation throughout your journey.
               </p>
             </div>
           </div>
 
           <div class="card p-6 flex items-start space-x-4">
-            <div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
-              <mat-icon class="text-primary">restaurant</mat-icon>
+            <div
+              class="w-12 h-12 bg-primary/20 dark:bg-primary/20 rounded-lg flex items-center justify-center flex-shrink-0"
+            >
+              <i class="fas fa-utensils dark:!text-yellow-500"></i>
             </div>
             <div>
               <h3 class="text-xl font-bold mb-2">Dining Reservations</h3>
               <p class="text-gray-600">
-                Access to exclusive restaurants and unique dining experiences around the world.
+                Access to exclusive restaurants and unique dining experiences
+                around the world.
               </p>
             </div>
           </div>
 
           <div class="card p-6 flex items-start space-x-4">
-            <div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
-              <mat-icon class="text-primary">theater_comedy</mat-icon>
+            <div
+              class="w-12 h-12 bg-primary/20 dark:bg-primary/20 rounded-lg flex items-center justify-center flex-shrink-0"
+            >
+              <i class="fas fa-masks-theater dark:!text-yellow-500"></i>
             </div>
             <div>
               <h3 class="text-xl font-bold mb-2">Event Tickets</h3>
               <p class="text-gray-600">
-                Premium access to shows, sports events, and cultural activities at your destination.
+                Premium access to shows, sports events, and cultural activities
+                at your destination.
               </p>
             </div>
           </div>
 
           <div class="card p-6 flex items-start space-x-4">
-            <div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
-              <mat-icon class="text-primary">health_and_safety</mat-icon>
+            <div
+              class="w-12 h-12 bg-primary/20 dark:bg-primary/20 rounded-lg flex items-center justify-center flex-shrink-0"
+            >
+              <i class="fas fa-shield-heart dark:!text-yellow-500"></i>
             </div>
             <div>
               <h3 class="text-xl font-bold mb-2">Travel Insurance</h3>
               <p class="text-gray-600">
-                Comprehensive travel insurance options to protect your journey and investment.
+                Comprehensive travel insurance options to protect your journey
+                and investment.
               </p>
             </div>
           </div>
         </div>
       </div>
     </section>
-  `
+  `,
 })
 export class ServicesComponent {}
